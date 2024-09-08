@@ -15,18 +15,21 @@ async fn query(conn: impl PgExecutor<'_>) -> sqlx::Result<()> {
 }
 
 // async fn call_two_queries(conn: impl PgExecutor<'_>) {
+// This only works if there is only one call to query
 //     query(conn).await.unwrap();
 
 //     //query(conn).await.unwrap();
 // }
 
 async fn call_two_queries(conn: &PgPool) {
+    //This only works for release code
     query(conn).await.unwrap();
 
     query(conn).await.unwrap();
 }
 
 // async fn call_two_queries(conn: &mut PgConnection) {
+//This only works for test code
 //     query(&mut *conn).await.unwrap();
 
 //     query(&mut *conn).await.unwrap();
