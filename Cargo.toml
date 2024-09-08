@@ -1,0 +1,11 @@
+[package]
+name = "sqlx_executor_trait"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { version = "1.0", features = ["std"], default-features = false }
+dotenvy = { version = "0.15", default-features = false}
+sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls", "postgres", "macros"], default-features = false }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"], default-features = false }
+url = { version = "2.5.2", default-features = false }
